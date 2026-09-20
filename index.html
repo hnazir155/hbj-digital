@@ -170,7 +170,12 @@ h2{font-size:clamp(40px,5vw,72px);font-weight:800;line-height:.98;letter-spacing
 .formats i::after{content:"";position:absolute;inset:auto 8px 8px 8px;height:3px;border-radius:2px;background:var(--sun);opacity:.8}
 .formats figcaption{font-size:11px;line-height:1.35;color:var(--faint)}
 .formats figcaption b{display:block;font-size:13px;color:var(--white)}
-.swatches{display:flex;gap:10px;margin-top:34px;align-items:flex-end}
+.swatch-block{margin-top:32px}
+.sw-label{display:flex;align-items:center;gap:10px;margin:0 0 12px;font:700 10px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--faint)}
+.sw-label b{color:var(--sun);font-weight:700;transition:opacity .35s}
+.swatches{display:flex;gap:10px;align-items:flex-end}
+.swatches i,.swatches figcaption{transition:background .55s var(--ease),color .35s,opacity .35s}
+.swatches.fading i,.swatches.fading figcaption,.sw-label.fading b{opacity:.15}
 .swatches figure{margin:0;display:grid;gap:8px;justify-items:center}
 .swatches i{display:block;width:40px;height:84px;border-radius:20px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
 .swatches figcaption{font-size:10px;font-weight:600;letter-spacing:.06em;color:var(--faint);font-variant-numeric:tabular-nums}
@@ -563,12 +568,15 @@ background:radial-gradient(circle,rgba(248,201,38,.13),rgba(248,201,38,0) 62%);t
 <h2>Brands people remember<span class="pt">.</span></h2>
 <p class="lede">A clear identity makes every ad work harder. We build the logo, colours, type and voice, then keep them consistent everywhere your customer sees you.</p>
 <ul class="caps"><li><svg class="i " aria-hidden="true"><use href="#i-nib"/></svg>Logo &amp; identity</li><li><svg class="i " aria-hidden="true"><use href="#i-book"/></svg>Brand guidelines</li><li><svg class="i " aria-hidden="true"><use href="#i-grid"/></svg>Social media design</li><li><svg class="i " aria-hidden="true"><use href="#i-box"/></svg>Packaging &amp; labels</li><li><svg class="i " aria-hidden="true"><use href="#i-slides"/></svg>Pitch &amp; sales decks</li><li><svg class="i " aria-hidden="true"><use href="#i-chat"/></svg>Voice &amp; messaging</li></ul>
-<div class="swatches" aria-label="Example: the HBJ Digital palette">
-<figure><i style="background:#02192B"></i><figcaption>02192B</figcaption></figure>
-<figure><i style="background:#0B334A"></i><figcaption>0B334A</figcaption></figure>
-<figure><i style="background:#19455D"></i><figcaption>19455D</figcaption></figure>
-<figure><i style="background:#E8AA0D"></i><figcaption>E8AA0D</figcaption></figure>
-<figure><i style="background:#F8C926"></i><figcaption>F8C926</figcaption></figure>
+<div class="swatch-block">
+<p class="sw-label"><span>Sample palette</span><b id="swName">Botanical skincare</b></p>
+<div class="swatches" id="swatches" role="img" aria-label="Example brand palettes we build for clients">
+<figure><i></i><figcaption></figcaption></figure>
+<figure><i></i><figcaption></figcaption></figure>
+<figure><i></i><figcaption></figcaption></figure>
+<figure><i></i><figcaption></figcaption></figure>
+<figure><i></i><figcaption></figcaption></figure>
+</div>
 </div>
 </div></div>
 </section>
@@ -744,16 +752,15 @@ background:radial-gradient(circle,rgba(248,201,38,.13),rgba(248,201,38,0) 62%);t
 </footer>
 <script src="/three.min.js"></script>
 <script>
-/* the 3D engine is served from this site; the two CDNs below are only used if that file is missing */
 (function(){
 if(window.THREE) return;
 var srcs=['https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js','https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js'],i=0;
 (function next(){
-  if(window.THREE){ window.hbjStart&&window.hbjStart(); return; }
-  if(i>=srcs.length){ window.hbjNo3D&&window.hbjNo3D('three.js could not be loaded'); return; }
-  var t=document.createElement('script'); t.src=srcs[i++];
-  t.onload=function(){ window.hbjStart&&window.hbjStart(); };
-  t.onerror=next; document.head.appendChild(t);
+if(window.THREE){ window.hbjStart&&window.hbjStart(); return; }
+if(i>=srcs.length){ window.hbjNo3D&&window.hbjNo3D('three.js could not be loaded'); return; }
+var t=document.createElement('script'); t.src=srcs[i++];
+t.onload=function(){ window.hbjStart&&window.hbjStart(); };
+t.onerror=next; document.head.appendChild(t);
 })();
 })();
 </script>
@@ -815,6 +822,27 @@ glow.style.transform='translate3d('+gx+'px,'+gy+'px,0)';
 raf=(Math.abs(tx-gx)+Math.abs(ty-gy)>0.5)?requestAnimationFrame(loop):0;
 });
 },{passive:true});
+}
+const swEl=$('swatches');
+if(swEl){
+const PALETTES=[
+['Botanical skincare',['1F2D24','3F5E4B','A8C0A0','E8DCC8','C9A227']],
+['Street food',       ['1B1B1E','B3261E','E4572E','F4A259','F7F0E8']],
+['Perfume',           ['17131A','3B2C42','7A5C86','D9C2D6','C8A96A']],
+['Fitness app',       ['101418','1F6F4A','2BD97C','C7F5DC','F2F4F3']],
+['Kids clothing',     ['203864','3E7CB1','F6C445','F58B7C','FDF3E3']]
+];
+const figs=[...swEl.querySelectorAll('figure')], nameEl=$('swName'), lbl=document.querySelector('.sw-label');
+const paint=i=>{const [name,cols]=PALETTES[i];nameEl.textContent=name;
+figs.forEach((f,n)=>{f.querySelector('i').style.background='#'+cols[n];f.querySelector('figcaption').textContent=cols[n];});};
+paint(0);
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+let i=0;
+setInterval(()=>{
+swEl.classList.add('fading'); lbl.classList.add('fading');
+setTimeout(()=>{ i=(i+1)%PALETTES.length; paint(i); swEl.classList.remove('fading'); lbl.classList.remove('fading'); },380);
+},4200);
+}
 }
 const clocks=[...document.querySelectorAll('[data-tz]')];
 function tick(){clocks.forEach(c=>{try{c.textContent=new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:c.dataset.tz}).format(new Date());}catch(e){}});}
