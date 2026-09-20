@@ -742,10 +742,20 @@ background:radial-gradient(circle,rgba(248,201,38,.13),rgba(248,201,38,0) 62%);t
 </div>
 </div>
 </footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="/three.min.js"></script>
 <script>
-if(!window.THREE){var s3=document.createElement('script');s3.src='https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js';
-s3.onload=function(){window.hbjStart&&window.hbjStart()};s3.onerror=function(){window.hbjNo3D&&window.hbjNo3D('three.js failed to load')};document.head.appendChild(s3);}
+/* the 3D engine is served from this site; the two CDNs below are only used if that file is missing */
+(function(){
+if(window.THREE) return;
+var srcs=['https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js','https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js'],i=0;
+(function next(){
+  if(window.THREE){ window.hbjStart&&window.hbjStart(); return; }
+  if(i>=srcs.length){ window.hbjNo3D&&window.hbjNo3D('three.js could not be loaded'); return; }
+  var t=document.createElement('script'); t.src=srcs[i++];
+  t.onload=function(){ window.hbjStart&&window.hbjStart(); };
+  t.onerror=next; document.head.appendChild(t);
+})();
+})();
 </script>
 <script>
 const CONTACT={whatsapp:"923097334000",email:"contact@hbjdigital.com"};
