@@ -14,14 +14,14 @@
 <meta property="og:title" content="HBJ Digital — Ideas. Brands. Real results.">
 <meta property="og:description" content="Creative and performance marketing for brands in Pakistan and the USA. Meta ads, creative production, branding and Shopify. Free ad account audit.">
 <meta property="og:url" content="https://hbj-digital.vercel.app/">
-<meta property="og:image" content="https://hbj-digital.vercel.app/og.jpg">
+<meta property="og:image" content="https://hbj-digital.vercel.app/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="HBJ Digital — Ideas. Brands. Real results.">
 <meta name="twitter:description" content="Creative and performance marketing for brands in Pakistan and the USA. Free ad account audit.">
-<meta name="twitter:image" content="https://hbj-digital.vercel.app/og.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"HBJ Digital","description":"Creative and performance marketing agency: Meta and paid ads, creative production, branding and Shopify stores.","url":"https://hbj-digital.vercel.app/","image":"https://hbj-digital.vercel.app/og.jpg","telephone":"+923097334000","email":"contact@hbjdigital.com","areaServed":[{"@type":"Country","name":"Pakistan"},{"@type":"Country","name":"United States"}],"sameAs":["https://www.facebook.com/hbjdigitalcom","https://www.instagram.com/hbjdigitalcom","https://www.tiktok.com/@hbjdigitalcom"]}</script>
+<meta name="twitter:image" content="https://hbj-digital.vercel.app/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"HBJ Digital","description":"Creative and performance marketing agency: Meta and paid ads, creative production, branding and Shopify stores.","url":"https://hbj-digital.vercel.app/","image":"https://hbj-digital.vercel.app/og.png","telephone":"+923097334000","email":"contact@hbjdigital.com","areaServed":[{"@type":"Country","name":"Pakistan"},{"@type":"Country","name":"United States"}],"sameAs":["https://www.facebook.com/hbjdigitalcom","https://www.instagram.com/hbjdigitalcom","https://www.tiktok.com/@hbjdigitalcom"]}</script>
 <style>[hidden]{display:none!important}img{max-width:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -227,7 +227,7 @@ h2{font-size:clamp(40px,5vw,72px);font-weight:800;line-height:.98;letter-spacing
 .form-head p{margin:0;font-size:12px;color:var(--faint)}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:30px}
 .field{position:relative;display:grid;gap:4px;margin:0;padding:0;border:0;min-width:0}
-.field>label,.field>legend{font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);padding:0;margin-bottom:6px}
+.field>label,.field>legend,.field .lbl{font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);padding:0;margin-bottom:6px}
 .field input,.field textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(255,255,255,.28);border-radius:0;padding:8px 0 12px;font:500 18px/1.4 var(--font);color:var(--white);transition:border-color .25s}
 .field textarea{resize:vertical;min-height:52px}
 .field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.3)}
@@ -244,9 +244,9 @@ h2{font-size:clamp(40px,5vw,72px);font-weight:800;line-height:.98;letter-spacing
 .chip input:checked + span{background:var(--sun);color:var(--night);box-shadow:none}
 .chip input:checked + span::before{background:var(--night);box-shadow:none}
 .chip input:focus-visible + span,.cur input:focus-visible + span{outline:2px solid var(--sun);outline-offset:2px}
-.budget{position:relative}
-.budget>legend{padding-right:120px}
-.cur{position:absolute;top:-8px;right:0;display:inline-flex;border-radius:999px;box-shadow:inset 0 0 0 1px var(--rule);padding:3px}
+.budget .legend-row{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:8px}
+.budget .lbl{margin-bottom:0}
+.cur{display:inline-flex;border-radius:999px;box-shadow:inset 0 0 0 1px var(--rule);padding:3px}
 .cur label{position:relative;cursor:pointer}
 .cur span{display:block;font-size:10px;font-weight:700;letter-spacing:.14em;padding:6px 11px;border-radius:999px;color:var(--faint)}
 .cur input:checked + span{background:var(--white);color:var(--night)}
@@ -427,11 +427,42 @@ background-color:var(--night)}
 @keyframes lsFloat{0%,100%{transform:translate(0,0) rotate(-6deg)}50%{transform:translate(-14px,-12px) rotate(-2deg)}}
 @media (max-width:1080px){.ls-ring{right:6vw;top:14vh}.ls-sun{right:calc(6vw + 13vmin);top:calc(14vh + 1vmin)}.ls-plane{right:30vw;top:22vh}}
 @media (prefers-reduced-motion:reduce){.ls-plane{animation:none}}
+/* ============ colour rhythm ============ */
+.tint-night::after,.tint-steel::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none}
+.tint-night::after{background:linear-gradient(180deg,rgba(2,25,43,0),rgba(2,25,43,.78) 13%,rgba(2,25,43,.78) 87%,rgba(2,25,43,0))}
+.tint-steel::after{background:linear-gradient(180deg,rgba(25,69,93,0),rgba(25,69,93,.55) 13%,rgba(25,69,93,.55) 87%,rgba(25,69,93,0))}
+.process::before{background:linear-gradient(180deg,rgba(2,25,43,0),rgba(2,25,43,.55) 26%,rgba(2,25,43,.55) 74%,rgba(2,25,43,0))}
+/* amber statement band */
+.band{position:relative;z-index:3;background:var(--amber);color:var(--night);padding:clamp(44px,6vw,80px) var(--gutter);
+border-top:1px solid rgba(2,25,43,.18);border-bottom:1px solid rgba(2,25,43,.18)}
+.band-in{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:32px}
+.band h2{font-size:clamp(28px,3.4vw,48px);line-height:1.02;max-width:20ch}
+.band .kicker{color:var(--night);opacity:.72}
+.band .kicker::before{background:var(--night)}
+.band .pt{background:var(--night)}
+.band .btn-night .dot{background:var(--sun);color:var(--night)}
+@media (max-width:860px){.band-in{grid-template-columns:1fr}.band .btn{justify-self:start}}
+/* ============ richer motion ============ */
+@supports (animation-timeline: view()){
+@media (prefers-reduced-motion:no-preference){
+.par{animation:par linear both;animation-timeline:view();animation-range:cover}
+@keyframes par{from{transform:translateY(30px)}to{transform:translateY(-30px)}}
+.kicker::before{animation:kick linear both;animation-timeline:view();animation-range:entry 10% entry 60%}
+@keyframes kick{from{height:0}to{height:18px}}
+}
+}
+.hero h1 .pt{animation:dotpop .55s var(--ease) both;animation-delay:.95s}
+@keyframes dotpop{0%{transform:scale(0)}70%{transform:scale(1.35)}100%{transform:scale(1)}}
+.cursor-glow{position:fixed;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;z-index:1;pointer-events:none;opacity:0;
+background:radial-gradient(circle,rgba(248,201,38,.13),rgba(248,201,38,0) 62%);transition:opacity .6s}
+.cursor-glow.on{opacity:1}
+@media (prefers-reduced-motion:reduce){.hero h1 .pt{animation:none}.cursor-glow{display:none}}
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></symbol><symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 5l-3 14"/></symbol><symbol id="i-split" viewBox="0 0 24 24"><rect x="3" y="5" width="7.5" height="14" rx="1.5"/><rect x="13.5" y="5" width="7.5" height="14" rx="1.5"/><path d="M15.5 12.5l1.5 1.5 2.5-3"/></symbol><symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 19.5c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><circle cx="17" cy="9" r="2.3"/><path d="M16.5 13.6c2.7.2 4.5 2.1 4.5 4.9"/></symbol><symbol id="i-rise" viewBox="0 0 24 24"><path d="M4 20h16M5 16l5-5 3 3 6-7M15 7h4v4"/></symbol><symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></symbol><symbol id="i-reel" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M10.2 9.3v5.4l4.6-2.7z" fill="currentColor"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><circle cx="12" cy="10" r="2.2"/><path d="M9 16.2c.6-1.6 1.7-2.4 3-2.4s2.4.8 3 2.4"/></symbol><symbol id="i-motion" viewBox="0 0 24 24"><path d="M3 16c2.5-6 5.5-6 8-2.5s5.5 3.5 8-2.5"/><circle cx="20" cy="9" r="1.6"/></symbol><symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.2"/><circle cx="9" cy="10" r="1.8"/><path d="M21 15.5l-5-5L6.5 20"/></symbol><symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-2.5h6L17 8h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13.5" r="3.5"/></symbol><symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/></symbol><symbol id="i-nib" viewBox="0 0 24 24"><path d="M12 3l6 7-6 11-6-11z"/><path d="M12 3v7"/><circle cx="12" cy="12" r="1.5"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z"/><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19M9 7.5h6"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="3.5"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5l9 4.5 9-4.5M12 12v9"/></symbol><symbol id="i-slides" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M12 16v4M8 20h8M7 12l3-3 2 2 4-4"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-5 4v-4H4z"/><path d="M8 9.5h8M8 12.5h5"/></symbol><symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2.5l2.2 11h10.6L20.5 8H6.6"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></symbol><symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></symbol><symbol id="i-funnel" viewBox="0 0 24 24"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></symbol><symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4.5 17.5a8.5 8.5 0 1 1 15 0"/><path d="M12 13.5l4-4"/><circle cx="12" cy="13.5" r="1.3"/></symbol><symbol id="i-cash" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="1.5"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v5M18 9.5v5"/></symbol><symbol id="i-bars" viewBox="0 0 24 24"><path d="M6 20v-6M12 20V5M18 20v-9M3 20h18"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-arrowdn" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol><symbol id="i-plane" viewBox="0 0 24 24"><path d="M21.5 2.5L2.5 10l7 3 3 7.5z"/><path d="M21.5 2.5L9.5 13"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-4.5"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="g-wa" viewBox="0 0 24 24"><path d="M12 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></symbol><symbol id="g-mail" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm17 2.3-7.4 5.6a1 1 0 0 1-1.2 0L4 7.3V17h16V7.3ZM5.4 7l6.6 5 6.6-5H5.4Z"/></symbol><symbol id="g-fb" viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.8l.4-3.3h-3.2V8.4c0-.9.3-1.6 1.6-1.6h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.3h2.8V22h3.4Z"/></symbol><symbol id="g-ig" viewBox="0 0 24 24"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4Zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm4.9-8.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2ZM21.9 8c-.1-1.5-.4-2.9-1.5-4-1.1-1.1-2.5-1.4-4-1.5-1.6-.1-6.3-.1-7.9 0-1.5.1-2.9.4-4 1.5S3.1 6.5 3 8c-.1 1.6-.1 6.3 0 7.9.1 1.5.4 2.9 1.5 4s2.5 1.4 4 1.5c1.6.1 6.3.1 7.9 0 1.5-.1 2.9-.4 4-1.5s1.4-2.5 1.5-4c.1-1.6.1-6.3 0-7.9Zm-2 9.6a3.2 3.2 0 0 1-1.8 1.8c-1.3.5-4.3.4-5.6.4s-4.4.1-5.6-.4a3.2 3.2 0 0 1-1.8-1.8c-.5-1.3-.4-4.3-.4-5.6s-.1-4.4.4-5.6A3.2 3.2 0 0 1 6.9 4.6c1.3-.5 4.3-.4 5.6-.4s4.4-.1 5.6.4a3.2 3.2 0 0 1 1.8 1.8c.5 1.3.4 4.3.4 5.6s.1 4.4-.4 5.6Z"/></symbol><symbol id="g-tt" viewBox="0 0 24 24"><path d="M16.6 2h-3.3v13.4a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .8.1V9.2a6.2 6.2 0 1 0 5.4 6.2V8.6a7.9 7.9 0 0 0 4.4 1.4V6.7a4.6 4.6 0 0 1-4.4-4.7Z"/></symbol><symbol id="g-g" viewBox="0 0 24 24"><path d="M21.4 10.2H12v3.9h5.4c-.5 2.4-2.6 3.8-5.4 3.8a6 6 0 1 1 3.9-10.5l2.8-2.8A9.9 9.9 0 1 0 12 22c5 0 9.6-3.6 9.6-10 0-.6-.1-1.2-.2-1.8Z"/></symbol><symbol id="g-meta" viewBox="0 0 24 24"><path d="M6.9 5.5c-2.9 0-5 3.9-5 7.4 0 2.6 1.3 4.3 3.3 4.3 1.8 0 3-1.2 4.9-4.5l.9-1.6.8 1.3c1.9 3.2 3.2 4.8 5.2 4.8 2.2 0 3.6-1.9 3.6-4.5 0-3.6-2.1-7.2-5-7.2-1.7 0-3 1.2-4.3 3.1C10 6.7 8.8 5.5 6.9 5.5Zm-.1 2.4c1 0 1.8.7 3 2.6l-1 1.7c-1.4 2.4-2.1 3-3 3-.8 0-1.4-.7-1.4-2.3 0-2.6 1.1-5 2.4-5Zm10.4.1c1.4 0 2.4 2.1 2.4 4.9 0 1.5-.6 2.3-1.4 2.3-.9 0-1.6-.8-3.1-3.3l-1.3-2.1c1.2-1.4 2.1-1.8 3.4-1.8Z"/></symbol></defs></svg>
 <canvas id="scene" aria-hidden="true"></canvas>
+<div class="cursor-glow" id="glow" aria-hidden="true"></div>
 <div class="lite-scene" aria-hidden="true">
 <i class="ls-ring r1"></i><i class="ls-ring r2"></i><i class="ls-sun"></i>
 <svg class="ls-plane" viewBox="0 0 120 80"><path d="M2 38 118 4 60 50Z" fill="#F8C926"/><path d="M60 50 118 4 70 74Z" fill="#E8AA0D"/><path d="M60 50 70 74 52 58Z" fill="#B98407"/></svg>
@@ -479,7 +510,7 @@ background-color:var(--night)}
 <div class="marquee" aria-hidden="true"><div class="track"><ul><li>Meta ads<i class="cap" aria-hidden="true"></i></li><li>Creative production<i class="cap" aria-hidden="true"></i></li><li>UGC &amp; reels<i class="cap" aria-hidden="true"></i></li><li>Branding<i class="cap" aria-hidden="true"></i></li><li>Shopify stores<i class="cap" aria-hidden="true"></i></li><li>Conversion optimisation<i class="cap" aria-hidden="true"></i></li><li>Google ads<i class="cap" aria-hidden="true"></i></li><li>TikTok ads<i class="cap" aria-hidden="true"></i></li><li>Free ad audits<i class="cap" aria-hidden="true"></i></li></ul><ul><li>Meta ads<i class="cap" aria-hidden="true"></i></li><li>Creative production<i class="cap" aria-hidden="true"></i></li><li>UGC &amp; reels<i class="cap" aria-hidden="true"></i></li><li>Branding<i class="cap" aria-hidden="true"></i></li><li>Shopify stores<i class="cap" aria-hidden="true"></i></li><li>Conversion optimisation<i class="cap" aria-hidden="true"></i></li><li>Google ads<i class="cap" aria-hidden="true"></i></li><li>TikTok ads<i class="cap" aria-hidden="true"></i></li><li>Free ad audits<i class="cap" aria-hidden="true"></i></li></ul></div></div>
 </section>
 <section class="station svc scrim-l" id="ads" data-station="ads">
-<div class="wrap"><div class="copy rv">
+<div class="wrap"><div class="copy rv par">
 <p class="kicker">Meta &amp; paid ads</p>
 <h2>Ads that pay for themselves<span class="pt">.</span></h2>
 <p class="lede">Full-funnel campaigns built around one number: what each rupee or dollar brings back. We test fast, cut what doesn't sell and scale what does.</p>
@@ -487,9 +518,9 @@ background-color:var(--night)}
 <div class="meta-row"><span class="lbl">Channels</span><div class="channels"><span><svg class="i f " aria-hidden="true"><use href="#g-meta"/></svg>Meta</span><span><svg class="i f " aria-hidden="true"><use href="#g-g"/></svg>Google</span><span><svg class="i f " aria-hidden="true"><use href="#g-tt"/></svg>TikTok</span></div></div>
 </div></div>
 </section>
-<section class="station svc" id="audit" data-station="audit">
+<section class="station svc tint-night" id="audit" data-station="audit">
 <div class="wrap">
-<article class="report rv" aria-labelledby="audit-title">
+<article class="report rv par" aria-labelledby="audit-title">
 <div class="report-head"><span>Ad account audit</span><span class="stamp">Free</span></div>
 <dl class="report-meta">
 <div><dt>Prepared for</dt><dd>Your brand</dd></div>
@@ -513,7 +544,7 @@ background-color:var(--night)}
 </div>
 </section>
 <section class="station svc scrim-l" id="creative" data-station="creative">
-<div class="wrap"><div class="copy rv">
+<div class="wrap"><div class="copy rv par">
 <p class="kicker">Creative production</p>
 <h2>Creative that stops the scroll<span class="pt">.</span></h2>
 <p class="lede">Ads live or die in the first second. We script, shoot and edit content made for the feed: native, fast and built to be tested.</p>
@@ -526,8 +557,8 @@ background-color:var(--night)}
 </div>
 </div></div>
 </section>
-<section class="station svc scrim-r" id="brand" data-station="brand">
-<div class="wrap"><div class="copy rv">
+<section class="station svc scrim-r tint-steel" id="brand" data-station="brand">
+<div class="wrap"><div class="copy rv par">
 <p class="kicker">Branding &amp; design</p>
 <h2>Brands people remember<span class="pt">.</span></h2>
 <p class="lede">A clear identity makes every ad work harder. We build the logo, colours, type and voice, then keep them consistent everywhere your customer sees you.</p>
@@ -542,7 +573,7 @@ background-color:var(--night)}
 </div></div>
 </section>
 <section class="station svc scrim-l" id="web" data-station="web">
-<div class="wrap"><div class="copy rv">
+<div class="wrap"><div class="copy rv par">
 <p class="kicker">Web &amp; Shopify</p>
 <h2>Stores built to convert<span class="pt">.</span></h2>
 <p class="lede">Traffic is expensive, so the store has to close the sale. We design, build and tune Shopify stores and landing pages for more checkouts per visitor.</p>
@@ -552,10 +583,19 @@ background-color:var(--night)}
 </div>
 </div></div>
 </section>
-<section class="station process" id="process" data-station="process">
+<section class="band" aria-label="Free audit offer">
+<div class="wrap band-in">
+<div>
+<p class="kicker">Straight talk</p>
+<h2>Most ad accounts don't have a traffic problem<span class="pt">.</span> They have a creative problem<span class="pt">.</span></h2>
+</div>
+<a class="btn btn-night" href="#enquiry" data-audit>Get a free ad audit<span class="dot"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+</div>
+</section>
+<section class="station process tint-night" id="process" data-station="process">
 <div class="wrap">
 <div class="process-top">
-<div class="copy rv">
+<div class="copy rv par">
 <p class="kicker">How we work</p>
 <h2>From first call to full scale<span class="pt">.</span></h2>
 </div>
@@ -569,8 +609,8 @@ background-color:var(--night)}
 </ol>
 </div>
 </section>
-<section class="station svc scrim-l" id="markets" data-station="markets">
-<div class="wrap"><div class="copy rv">
+<section class="station svc scrim-l tint-steel" id="markets" data-station="markets">
+<div class="wrap"><div class="copy rv par">
 <p class="kicker">Where we work</p>
 <h2>Two markets. One team<span class="pt">.</span></h2>
 <p class="lede">People in Pakistan and the USA shop differently. We plan campaigns, creative and checkout around how each audience actually buys.</p>
@@ -640,15 +680,15 @@ background-color:var(--night)}
 <div class="chips"><label class="chip" for="svc-audit"><input type="checkbox" id="svc-audit" name="service" value="Free ad audit"><span>Free ad audit</span></label><label class="chip" for="svc-ads"><input type="checkbox" id="svc-ads" name="service" value="Meta & paid ads"><span>Meta &amp; paid ads</span></label><label class="chip" for="svc-creative"><input type="checkbox" id="svc-creative" name="service" value="Creative production"><span>Creative production</span></label><label class="chip" for="svc-brand"><input type="checkbox" id="svc-brand" name="service" value="Branding & design"><span>Branding &amp; design</span></label><label class="chip" for="svc-web"><input type="checkbox" id="svc-web" name="service" value="Web & Shopify"><span>Web &amp; Shopify</span></label></div>
 <p class="err" id="e-svc">Pick at least one service.</p>
 </fieldset>
-<fieldset class="field budget">
-<legend>Monthly ad budget *</legend>
+<div class="field budget" role="group" aria-labelledby="bud-label">
+<div class="legend-row"><span class="lbl" id="bud-label">Monthly ad budget *</span>
 <div class="cur" role="radiogroup" aria-label="Currency">
 <label for="cur-pkr"><input type="radio" id="cur-pkr" name="currency" value="PKR" checked><span>PKR</span></label>
 <label for="cur-usd"><input type="radio" id="cur-usd" name="currency" value="USD"><span>USD</span></label>
-</div>
+</div></div>
 <div class="chips"><label class="chip" for="bud-0"><input type="radio" id="bud-0" name="budget" value="0"><span data-pkr="Under PKR 50k" data-usd="Under $500">Under PKR 50k</span></label><label class="chip" for="bud-1"><input type="radio" id="bud-1" name="budget" value="1"><span data-pkr="PKR 50k – 150k" data-usd="$500 – $2k">PKR 50k – 150k</span></label><label class="chip" for="bud-2"><input type="radio" id="bud-2" name="budget" value="2"><span data-pkr="PKR 150k – 500k" data-usd="$2k – $5k">PKR 150k – 500k</span></label><label class="chip" for="bud-3"><input type="radio" id="bud-3" name="budget" value="3"><span data-pkr="PKR 500k – 1.5M" data-usd="$5k – $15k">PKR 500k – 1.5M</span></label><label class="chip" for="bud-4"><input type="radio" id="bud-4" name="budget" value="4"><span data-pkr="PKR 1.5M+" data-usd="$15k+">PKR 1.5M+</span></label><label class="chip" for="bud-5"><input type="radio" id="bud-5" name="budget" value="5"><span data-pkr="Not sure yet" data-usd="Not sure yet">Not sure yet</span></label></div>
 <p class="err" id="e-bud">Pick a budget range.</p>
-</fieldset>
+</div>
 <div class="field">
 <label for="f-msg">Anything else?</label>
 <textarea id="f-msg" name="message" rows="2" placeholder="Goals, products, current results (optional)"></textarea>
@@ -704,7 +744,6 @@ background-color:var(--night)}
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-/* second source, in case the first CDN is blocked */
 if(!window.THREE){var s3=document.createElement('script');s3.src='https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js';
 s3.onload=function(){window.hbjStart&&window.hbjStart()};s3.onerror=function(){window.hbjNo3D&&window.hbjNo3D('three.js failed to load')};document.head.appendChild(s3);}
 </script>
@@ -742,11 +781,31 @@ const max=document.documentElement.scrollHeight-innerHeight;
 const f=max>0?Math.min(1,scrollY/max):0;
 prog.style.transform='scaleX('+f+')'; if(rf) rf.style.transform='scaleY('+f+')';
 hdr.classList.toggle('scrolled',scrollY>40);
-if(railEl&&foot) railEl.classList.toggle('off',foot.getBoundingClientRect().top<innerHeight*0.7);
+if(railEl){const r1=foot?foot.getBoundingClientRect().top<innerHeight*0.7:false;const bd=document.querySelector('.band');const r2=bd?(bd.getBoundingClientRect().top<innerHeight*0.62&&bd.getBoundingClientRect().bottom>innerHeight*0.38):false;railEl.classList.toggle('off',r1||r2);}
 ticking=false;
 });
 }
 addEventListener('scroll',onScroll,{passive:true}); onScroll();
+const fine=matchMedia('(pointer: fine)').matches, calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(fine&&!calm){
+document.querySelectorAll('.btn,.icon-btn').forEach(b=>{
+b.addEventListener('pointermove',e=>{
+const r=b.getBoundingClientRect();
+b.style.transform='translate('+((e.clientX-r.left-r.width/2)/r.width*9).toFixed(1)+'px,'+((e.clientY-r.top-r.height/2)/r.height*7).toFixed(1)+'px)';
+});
+b.addEventListener('pointerleave',()=>{b.style.transform=''});
+});
+const glow=$('glow'); let gx=innerWidth/2, gy=innerHeight/2, tx=gx, ty=gy, raf=0;
+addEventListener('pointermove',e=>{
+if(e.pointerType!=='mouse') return;
+tx=e.clientX; ty=e.clientY; glow.classList.add('on');
+if(!raf) raf=requestAnimationFrame(function loop(){
+gx+=(tx-gx)*.12; gy+=(ty-gy)*.12;
+glow.style.transform='translate3d('+gx+'px,'+gy+'px,0)';
+raf=(Math.abs(tx-gx)+Math.abs(ty-gy)>0.5)?requestAnimationFrame(loop):0;
+});
+},{passive:true});
+}
 const clocks=[...document.querySelectorAll('[data-tz]')];
 function tick(){clocks.forEach(c=>{try{c.textContent=new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:c.dataset.tz}).format(new Date());}catch(e){}});}
 tick(); setInterval(tick,20000);
